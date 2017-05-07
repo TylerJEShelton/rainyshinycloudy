@@ -1,2 +1,2 @@
 ###Simple Forecasts Free
-(formerly rainyshinycloudy)
+##(formerly rainyshinycloudy)
