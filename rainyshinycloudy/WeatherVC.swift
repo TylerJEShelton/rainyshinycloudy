@@ -135,15 +135,17 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     func updateMainUI() {
         dateLabel.text = currentWeather.date
         currentTempLabel.text = "\(currentWeather.currentTempCel)°"
-        currentWeatherTypeLabel.text = currentWeather.weatherDesc
+        currentWeatherTypeLabel.text = currentWeather.weatherType
         locationLabel.text = currentWeather.cityName
-        currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
+        currentWeatherImage.image = UIImage(named: "\(currentWeather.weatherCode)")
         if WeatherVC.celsiusFahrenheitSelection == true {
             currentTempLabel.text = "\(currentWeather.currentTempCel)°C"
-            highLowCurrentDayTempLabel.text = currentWeather.highLowTempCel
+//            highLowCurrentDayTempLabel.text = currentWeather.highLowTempCel
+            highLowCurrentDayTempLabel.text = currentWeather._curFeelsLikeCel
         } else {
             currentTempLabel.text = "\(currentWeather.currentTempFah)°F"
-            highLowCurrentDayTempLabel.text = currentWeather.highLowTempFah
+//            highLowCurrentDayTempLabel.text = currentWeather.highLowTempFah
+            highLowCurrentDayTempLabel.text = currentWeather._curFeelsLikeFah
         }
         
     }
